@@ -65,6 +65,7 @@ body, html {
     transform: scale(1.05);
 }
 
+/* --- PC向けアニメーション --- */
 @keyframes fadeInButton {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -104,5 +105,58 @@ body, html {
     to {
         opacity: 1;
         right: -200px;
+    }
+}
+
+/* --- ここからスマホ向けスタイルを追加 --- */
+@media screen and (max-width: 768px) {
+
+    .logo {
+        /* スマホでは最初から左上に表示するなどの調整も可能ですが、
+           今回はアニメーションの最終位置を調整します。 */
+        max-width: 80%; /* 中央での初期サイズを調整 */
+    }
+
+    .sini-image {
+        max-width: 100%; /* 画面幅に合わせる */
+    }
+
+    .download-button {
+        /* ボタンの配置とサイズをスマホ向けに調整 */
+        width: 80%;
+        padding: 15px 10px;
+        font-size: 18px;
+        bottom: 5%;
+        left: 50%;
+        transform: translateX(-50%); /* 中央揃え */
+        text-align: center;
+        box-sizing: border-box; /* paddingを含めて幅を計算 */
+    }
+
+    /* スマホ向けのアニメーション最終位置を再定義 */
+    @keyframes moveToTopLeft {
+        from {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 80%;
+        }
+        to {
+            top: 10px; /* 画面内に収まるように調整 */
+            left: 10px;
+            transform: translate(0, 0);
+            max-width: 25%; /* スマホでの最終サイズ */
+        }
+    }
+
+    @keyframes slideInRight {
+        from {
+            opacity: 0;
+            right: -100%; /* 初期位置をより外側に */
+        }
+        to {
+            opacity: 1;
+            right: 10px; /* 画面内に収まるように調整 */
+        }
     }
 }
