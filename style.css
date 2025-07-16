@@ -1,0 +1,108 @@
+@font-face {
+    font-family: 'KillGothic';
+    src: url('GN-KillGothic-U-KanaO.ttf') format('truetype');
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.background-container {
+    background-image: url('stage.png');
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 50%;
+    height: auto;
+    opacity: 0;
+    animation: 
+        bounceInCenter 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) 1s forwards,
+        moveToTopLeft 0.8s ease-in-out 3.5s forwards;
+}
+
+.sini-image {
+    position: absolute;
+    top: 50%;
+    right: -50%;
+    transform: translateY(-50%);
+    max-width: 90%;
+    height: auto;
+    opacity: 0;
+    animation: slideInRight 0.8s ease-out 3.5s forwards;
+}
+
+.download-button {
+    position: absolute;
+    bottom: 300px;
+    left: 100px;
+    background-color: white;
+    padding: 18px 148px;
+    text-decoration: none;
+    color: black;
+    font-family: 'KillGothic', sans-serif;
+    font-size: 30px;
+    border: 5px solid black;
+    border-radius: 8px;
+    box-shadow: 0 0 0 4px #ff00ff;
+    opacity: 0;
+    animation: fadeInButton 0.5s ease-in 4.5s forwards;
+    transition: transform 0.2s;
+}
+
+.download-button:hover {
+    transform: scale(1.05);
+}
+
+@keyframes fadeInButton {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes bounceInCenter {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.3);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes moveToTopLeft {
+    from {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 50%;
+    }
+    to {
+        top: -50px;
+        left: 20px;
+        transform: translate(0, 0);
+        max-width: 30%;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        right: -30%;
+    }
+    to {
+        opacity: 1;
+        right: -200px;
+    }
+}
