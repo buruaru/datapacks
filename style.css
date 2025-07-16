@@ -118,8 +118,7 @@ body, html {
     }
 
     .sini-image {
-        max-width: 100%; /* 画面幅に合わせる */
-        transform: scale(1.5);
+        max-width: 130%; /* 画面幅に合わせる */
     }
 
     .download-button {
