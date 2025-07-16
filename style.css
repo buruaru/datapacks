@@ -119,6 +119,7 @@ body, html {
 
     .sini-image {
         max-width: 100%; /* 画面幅に合わせる */
+        transform: scale(1.5);
     }
 
     .download-button {
